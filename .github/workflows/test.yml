@@ -1,0 +1,17 @@
+name: test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          repository: 'reiked/helm-operator-get-started'
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_USER_TOKEN }}
+      - name: List Files
+        run: |
+          ls -lisa
