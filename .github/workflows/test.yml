@@ -14,6 +14,7 @@ jobs:
       - name: List Files
         run: |
           echo "test" >> test.text
+          ls -lisa
       - name: commit
         run: |
           git config user.name github-actions
